@@ -40,3 +40,22 @@ def get_location_dict(crime_dict):
 		location_dict[crime_id] = location
 
 	return location_dict
+
+# this will output a list of (lat, lon)
+def get_location_list(crime_dict):
+	location_list = []
+
+	for crime_id in crime_dict:
+		crime = crime_dict[crime_id]
+
+		if crime['Location'] == '':
+			continue
+
+		# location is the tuple: (lat, lon)
+		# crime['latitude'] is originially in a string so I need to float it
+		lat = float(crime['Latitude'])
+		lon = float(crime['Longitude'])
+		location_list.append((lat, lon))
+
+	return location_list
+
