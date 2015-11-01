@@ -17,6 +17,10 @@ Datasets Explained:
 
 	The total dataset is about 20 times the size of the 2013 dataset (makes sense, since there are 15 years in total, and we will observe that the total number of crimes is descreasing considerably year by year).
 
+	I ran the entire code with the '2001-Present_Crime_Data.csv' dataset and produced the corresponding outputs in the 'output' folder. However, Git would not let me upload the entire 2001 - 1015 dataset since it exceeds the 100mb limit.
+
+	* So right now if you run 'python run_all.py' as it is in the top directory, it will be running on the 2013 dataset only. But I do have the outputs for the entire 2001-2015 dataset generated in the output folder.
+
 ----------------------------
 
 Questions Investigated:
