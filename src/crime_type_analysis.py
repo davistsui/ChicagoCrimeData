@@ -17,6 +17,10 @@ import numpy as np
 		1) What are the 10 most frequent crime types for each year?
 
 		2) How do they change from year to year?
+
+	* Attention:
+		Since Git would not allow me to upload the entire dataset, this code right now will only run on the 2013 dataset.
+		However, the graphs for the entire 2001-2015 dataset is already produced in the output folder.
 '''
 
 
@@ -134,7 +138,7 @@ def plot_crime_type_num(crime_type_num_dict):
 
 
 if __name__ == '__main__':
-	csvfile_name = 'data/2001-Present_Crime_Data.csv'
+	csvfile_name = 'data/2013_Crime_Data.csv'
 	crime_type_num_list = mk_crime_type_num_list(csvfile_name)
 	crime_type_num_dict = mk_crime_type_num_dict(crime_type_num_list)
 	# generates a top 10 crime type vs. crime count bar chart for every year

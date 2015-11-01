@@ -18,6 +18,10 @@ import numpy as np
 		1) How has the crime numbers changed for the past 15 years (from year to year)?
 
 		2) How does monthly crime numbers change within a year?
+
+	* Attention:
+		Since Git would not allow me to upload the entire dataset, this code right now will only run on the 2013 dataset.
+		However, the graphs for the entire 2001-2015 dataset is already produced in the output folder.
 '''
 
 
@@ -159,18 +163,21 @@ def plot_yearly_crime_num(crime_num_dict):
 	yearly_crime_num_list = []
 	# to ensure the order of the years:
 	for i in range(2001, 2016):
-		year_count = 0
-		for month in crime_num_dict[i]:
-			year_count += crime_num_dict[i][month]
-		yearly_crime_num_list.append(year_count)
+		# i is not a key of the dict
+		if i not in crime_num_dict:
+			yearly_crime_num_list.append(0)
 
-	print yearly_crime_num_list
+		else:
+			year_count = 0
+			for month in crime_num_dict[i]:
+				year_count += crime_num_dict[i][month]
+			yearly_crime_num_list.append(year_count)
 
 	plot_yearly_crime_num_helper(yearly_crime_num_list)
 
 
 if __name__ == '__main__':
-	csvfile_name = 'data/2001-Present_Crime_Data.csv'
+	csvfile_name = 'data/2013_Crime_Data.csv'
 	crime_num_list = mk_crime_num_list(csvfile_name)
 	crime_num_dict = mk_crime_num_dict(crime_num_list)
 	
