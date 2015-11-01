@@ -1,0 +1,27 @@
+Crime Number Analysis:
+
+	It is evident from the '2001-2015 Total Crime Numbers' bar graph that crime numbers are decreasing year by year since 2001. The number of crimes in 2015 (thus far till 10.24) is only half of that of 2001 -- a significant drop.
+
+	This decrease in overall number of crime per year is also reflected in the group of 15 monthly crime number bar graphs. It is evident that the overall height of each bar is decrease year by year.
+
+	Furthermore, from these 15 bar charts of monthly crime numbers, we can see that the monthly trend remains roughly the same for the past 15 years, with the colder months (Nov, Dec, Jan, Feb) having a dip in crime numbers and the hoter months (May, Jun, Jul, Aug, Sep) having a rise in crime numbers. Another interesting finding is that there is always a spike in Jan, despite a dip in both December and February. I hypothesize this spike is due to the new year celebrations, when everyone is out celebrating, giving more opportunties to commit crimes.
+
+
+***********************
+
+Crime Type Analysis:
+
+	First of all, it is evident from the 15 bar graphs (one for each year) that the top 10 crimes types remain roughly the same for each year: ['THEFT', 'BATTERY', 'CRIMINAL DAMANAGE', 'NARCOTICS', 'OTHER OFFENSE', 'ASSAULT', 'BURGLARY', 'MOTOR VEHICLE THEFT', 'ROBBERY', 'CRIMINAL TRESPASS'], and also in roughly the same order. 'THEFT' and 'BATTERY' make up approximately half of the number of crimes of the total.
+
+	It is also evident form these 15 bar charts that the height of each bar is decresing steadily over the years, which matches up with findings in the Crime Number Analysis.
+
+***********************
+
+Significance of Apache Spark:
+
+	I need to process close to 6 million lines in the csvfile (one for each crime) and the computation could get intensive, depending on what I want to do. I read in the 2013 csvfile as a subset of the overall data and turned it into a dictionary with the necessary information I need to make all the graphs -- the entire process took about 3 seconds (I processed 306,356 lines in the csvfile). This is much faster than I had expected and I would say that for what I am doing, it is probably unncessary to use Apache Spark.
+
+	However, if I were to perform more computationally intensive tasks on each individle crime (such as sending its (latitude, longitude) location to a geo-mapping API, which I would like to accomplish give the time), using Apache Spark would be incredibly useful.
+
+	With it being a self-contianed Apache Spakr application, it takes about 2 min to run through all my files. I run through the 6 million crimes twice during this process, so it takes approximately 1 min to run through the entire dataset and perform the corresponding tasks.
+	
